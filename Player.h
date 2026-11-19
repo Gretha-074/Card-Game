@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
-#include <cstdlib> 
+#include <cstdlib>
+#include "Rubis.h" 
 using namespace std;
 
 enum Side {TOP, BOTTOM, LEFT, RIGHT};
@@ -45,8 +46,10 @@ int Player::getNRubies() const {
     return this->rubis;
 }
 
-void Player::addRubis(const Rubis& rubis){
-this->rubis = this->rubis + rubis;
+void Player::addRubis(const Rubis& r){
+    Rubis rubisCopy = r;
+    int valeurRubis = int(rubisCopy); // Conversion du Rubis en int grâce à l'opérateur de conversion
+this->rubis = this->rubis + valeurRubis;
 }
 
 void Player::setDisplayMode(bool endOfGame){
